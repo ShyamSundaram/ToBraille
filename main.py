@@ -11,5 +11,5 @@ def from_pdf(pdfname):
     t=pdf_image.to_image(pdfname)
     print(t)
 
-# from_image('unnamed320.jpg')
-from_pdf('test2.pdf')
+from_image('unnamed320.jpg')
+#from_pdf('test2.pdf')
