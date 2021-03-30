@@ -1,5 +1,6 @@
 import pdf_image
 import text_recognition
+import pdf_to_text
 import os
 
 def from_image(imgname):
@@ -8,8 +9,9 @@ def from_image(imgname):
     print(t)
 
 def from_pdf(pdfname):
-    t=pdf_image.to_image(pdfname)
-    print(t)
+    #t=pdf_image.to_image(pdfname)
+    pdf_to_text.pdf_to_braille(pdfname)
+    #print(t)
 
-from_image('unnamed320.jpg')
-#from_pdf('test2.pdf')
+#from_image('unnamed320.jpg')
+from_pdf(r"E:\Academics\VIT\Project\Microprocessor\Code\test2.pdf")
