@@ -7,7 +7,7 @@
 # board.digital[13].write(0)
 import serial #for Serial communication
 import time   #for delay functions
-
+import pdf_to_braille
 #  DIN connects to pin 12
 #  CLK connects to pin 11
 #  CS connects to pin 10 
@@ -18,12 +18,13 @@ time.sleep(2) #wait for 2 secounds for the communication to get established
 print(arduino.readline()) #read the serial data and print it as line
 print ("Start")
 
-var=input()
-
-for i in var:
-    arduino.write(bytes(i,'utf-8'))
-    time.sleep(2)
-    print(i)
+var=pdf_to_braille.toText('test2.pdf')#input()
+print(var)
+arduino.write(bytes(var,'utf-8'))
+# for i in var:
+#     arduino.write(bytes(i,'utf-8'))
+#     time.sleep(2)
+#     print(i)
  
 # while 1:      #Do this in loop
 #     var = input() #get input from user

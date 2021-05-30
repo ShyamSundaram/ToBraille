@@ -6,11 +6,11 @@
  CLK connects to pin 11
  CS connects to pin 10 
 */
-char data;
+String data;
 LedControl lc=LedControl(12,11,10,1);
 
 // delay time between faces
-unsigned long delaytime=2000;
+unsigned long delaytime=500;
 
 void setup() 
 { 
@@ -246,10 +246,10 @@ void loop()
 {
   while (Serial.available())
   {
-    data = Serial.read();
+    data = Serial.readString();
     //Serial.print(data);
   }
-
-  alpha(data);
+  for(int i=0;i<data.length();++i)
+  alpha(data.charAt(i));
 
 }
