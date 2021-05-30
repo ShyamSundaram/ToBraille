@@ -1,16 +1,4 @@
-import PyPDF2
-
-pdfFileObj = open('example.pdf', 'rb')
-
-pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
-
-print("Number of pages: "+ str(pdfReader.numPages))
-
-pageObj = pdfReader.getPage(0)
-
-print(pageObj.extractText())
-
-string = pageObj.extractText()
+string = "qwadWAD1"
 braille_line = []
 braille_paragraph = []
 
@@ -63,7 +51,6 @@ eng_bra["'"] = [0, 0, 0, 0, 1, 0], [0, 0, 1, 0, 1, 1]
 eng_bra["("] = [0, 0, 0, 1, 0, 0], [1, 0, 1, 0, 0, 1]
 eng_bra[")"] = [0, 0, 0, 1, 0, 0], [0, 1, 0, 1, 1, 0]
 eng_bra[":"] = [0, 0, 1, 1, 0, 0]
-eng_bra[";"] = [0, 0, 1, 0, 1, 0]
 # eng_bra["\n"] = [0, 0, 0, 0, 0, 0]
 
 capital = [0, 0, 0, 0, 0, 1]
@@ -86,7 +73,26 @@ for i in range(len(string)):
 for q in braille_paragraph:
     print(q)
 
-print("Lines: " + str(len(braille_paragraph)))
+print(braille_line)
 
-# closing the pdf file object
-pdfFileObj.close()
+# if (x == 'a'){
+#     lc.setRow(0, 0, B10000000);
+#     delay(delaytime);
+#     cleardisp();
+# }
+
+for i in range(len(string)):
+    if string[i].isupper():
+        arr = eng_bra[string[i].lower()]
+    elif string[i].isdigit():
+        arr = eng_bra[string[i].lower()]
+    elif string[i].islower():
+        arr = eng_bra[string[i].lower()]
+    else:
+        arr = [0, 0, 0, 0, 0, 0]
+    for j in range(len(arr)):
+        binary = "B"
+        k = j//2
+        if 
+        result = [0, k, binary]
+
