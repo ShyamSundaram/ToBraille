@@ -13,5 +13,5 @@ def from_pdf(pdfname):
     pdf_to_text.pdf_to_braille(pdfname)
     #print(t)
 
-#from_image('unnamed320.jpg')
-from_pdf(r"E:\Academics\VIT\Project\Microprocessor\Code\test2.pdf")
+from_image('unnamed320.jpg')
+#from_pdf(r"E:\Academics\VIT\Project\Microprocessor\Code\test2.pdf")

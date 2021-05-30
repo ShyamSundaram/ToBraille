@@ -3,10 +3,15 @@
 
 # board = Arduino('COM3')
 
+
 # board.digital[13].write(0)
 import serial #for Serial communication
 import time   #for delay functions
- 
+
+#  DIN connects to pin 12
+#  CLK connects to pin 11
+#  CS connects to pin 10 
+
 arduino = serial.Serial('COM3',9600) #Create Serial port object called arduinoSerialData
 time.sleep(2) #wait for 2 secounds for the communication to get established
 
@@ -17,7 +22,7 @@ var=input()
 
 for i in var:
     arduino.write(bytes(i,'utf-8'))
-    time.sleep(1)
+    time.sleep(2)
     print(i)
  
 # while 1:      #Do this in loop
