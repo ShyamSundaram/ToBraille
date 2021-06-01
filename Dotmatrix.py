@@ -18,13 +18,17 @@ time.sleep(2) #wait for 2 secounds for the communication to get established
 
 print(arduino.readline()) #read the serial data and print it as line
 print ("Start")
-print("1. PDF\n2. Image: ")
-ch=int(input())
-filen=input()
+print("1. PDF\n2. Image\n3. Speech ")
+ch=int(input("Choice: "))
+
 if(ch==1):
+    filen=input()
     var=main.from_pdf(filen)#pdf_to_braille.toText(filen)#('test2.pdf')#input()
 elif (ch==2):
+    filen=input()
     var=main.from_image(filen)
+elif (ch==3):
+    var=main.from_speech()
 print(var)
 arduino.write(bytes(var,'utf-8'))
 
